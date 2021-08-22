@@ -1,4 +1,4 @@
-import logging
+import logging # TODO: add loguru
 
 from aiogram import Dispatcher
 
