@@ -17,7 +17,14 @@ async def errors_handler(update, exception):
     :return: stdout logging
     """
 
-    
+    if isinstance(exception, CantDemoteChatCreator):
+        logger.error("Can't demote chat creator")
+        return True
+
+    if isinstance(exception, MessageNotModified):
+        logger.error('Message is not modified')
+        return True
+
     if isinstance(exception, MessageCantBeDeleted):
         logger.error('Message cant be deleted')
         return True
